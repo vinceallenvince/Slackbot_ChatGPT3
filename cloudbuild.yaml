@@ -1,13 +1,6 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build',
-  '--build-arg', 'SLACK_BOT_GPT3_TOKEN=$_SLACK_BOT_GPT3_TOKEN',
-  '--build-arg', 'SLACK_APP_GPT3_TOKEN=$_SLACK_APP_GPT3_TOKEN',
-  '--build-arg', 'OPENAI_API_KEY=$_OPENAI_API_KEY',
-  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10', '.' ]
+  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest', '.' ]
 images:
-- 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10'
-substitutions: 
-  _SLACK_BOT_GPT3_TOKEN: ''
-  _SLACK_APP_GPT3_TOKEN: ''
-  _OPENAI_API_KEY: ''
+- 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest'
