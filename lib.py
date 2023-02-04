@@ -1,5 +1,7 @@
+import os
 import openai
 
+openai.api_key = os.environ["OPENAI_API_KEY"]
 MODEL = "text-davinci-003"
 
 def create_completion(prompt):
