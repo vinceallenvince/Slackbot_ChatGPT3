@@ -6,7 +6,6 @@ steps:
   '--build-arg', 'OPENAI_API_KEY=$_OPENAI_API_KEY',
   '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10',
   compute, instance-groups, managed, rolling-action, restart, instance-group-slackbot-1,
-  '--zone', 'us-central1-a',
   '.' ]
 images:
 - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10'
