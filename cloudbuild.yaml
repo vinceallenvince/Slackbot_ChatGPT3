@@ -11,4 +11,7 @@ substitutions:
   _SLACK_BOT_GPT3_TOKEN: ''
   _SLACK_APP_GPT3_TOKEN: ''
   _OPENAI_API_KEY: ''
+- name: gcr.io/cloud-builders/gcloud
+  args: [ compute, instance-groups, managed, rolling-action, start-update, instance-group-slackbot-1, --project=home-37592, --zone=us-central1-a ]
+
 
