@@ -26,12 +26,12 @@ def event_test(event, say):
 
 	text = f"<@{user_id}> \n{completion_text}"
 
-	logger.log_text("completion response: text")
+	logger.log_text(f"completion response: {text}")
 
 	say(text)
 
 if __name__ == "__main__":
 	#App-level tokens represent your app across organizations, including installations by all individual users on all workspaces in a given organization.
 	#App-level token strings begin with xapp-. We sometimes refer to them as "zap!" tokens.
-    SocketModeHandler(app, access_secret_version("SLACK_APP_GPT3_TOKEN")).start()
     logger.log_text("app started...")
+    SocketModeHandler(app, access_secret_version("SLACK_APP_GPT3_TOKEN")).start()
