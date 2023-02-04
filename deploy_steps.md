@@ -10,11 +10,8 @@
 
     Follow these [instructions](https://stackoverflow.com/questions/66223475/google-cloud-build-pass-environment-variable-for-dockerfile) to pass environment vars from the command line to the cloudbuild YAML file. More [info](https://cloud.google.com/sdk/gcloud/reference/builds/submit#--substitutions) on the substitions flag.
 
-* Run the cloud build command
-	
-	```
-    gcloud builds submit --region=us-west2 --config cloudbuild.yaml --substitutions _SLACK_APP_GPT3_TOKEN=$SLACK_APP_GPT3_TOKEN,_SLACK_BOT_GPT3_TOKEN=$SLACK_BOT_GPT3_TOKEN,_OPENAI_API_KEY=$OPENAI_API_KEY
-    ```
+* After the build pushes the image to Artifact Registry, deploy the image to GCE. When creating a VM Instance:
 
-* If you get a "failed_precondition: due to quota restrictions, cannot run builds in this region" error, change the build region. For a list, https://cloud.google.com/build/docs/locations
+    * Create in the same region as the artifactory repo
+    * Allow full access to all Cloud APIs
 
