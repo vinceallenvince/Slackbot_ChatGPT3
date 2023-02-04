@@ -4,7 +4,9 @@ steps:
   '--build-arg', 'SLACK_BOT_GPT3_TOKEN=$_SLACK_BOT_GPT3_TOKEN',
   '--build-arg', 'SLACK_APP_GPT3_TOKEN=$_SLACK_APP_GPT3_TOKEN',
   '--build-arg', 'OPENAI_API_KEY=$_OPENAI_API_KEY',
-  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10', '.' ]
+  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10',
+  compute, instance-groups, managed, rolling-action, restart, instance-group-slackbot-1, --zone=us-central1-a
+  '.' ]
 images:
 - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10'
 substitutions: 
