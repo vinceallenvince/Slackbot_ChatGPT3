@@ -18,7 +18,7 @@ def event_test(event, say):
 	completion = create_completion(event["text"])
 	completion_text = completion.choices[0].text
 	
-	text = f"<@{user_id}> \n{completion_text}"
+	text = f"<@{user_id}>!! \n{completion_text}"
 
 	say(text)
 
