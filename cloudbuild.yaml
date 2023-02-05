@@ -4,6 +4,6 @@ steps:
   '--build-arg', 'PROJECT_ID=$PROJECT_ID',
   '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest', '.' ]
 - name: 'gcr.io/cloud-builders/gcloud'
-  args: [ 'compute', 'instance-groups'. 'managed, 'rolling-action', 'restart', 'instance-group-slackgpt3bot-1', '--zone=northamerica-northeast1-a' ]
+  args: [ 'compute', 'instance-groups', 'managed', 'rolling-action', 'restart', 'instance-group-slackgpt3bot-1', '--zone=northamerica-northeast1-a' ]
 images:
 - 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest'
