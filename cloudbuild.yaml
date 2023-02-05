@@ -1,6 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/docker'
   args: [ 'build',
-  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest', '.' ]
+  '--build-arg', 'PROJECT_ID=$PROJECT_ID',
+  '-t', 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10', '.' ]
 images:
-- 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:latest'
+- 'northamerica-northeast1-docker.pkg.dev/$PROJECT_ID/slackbotopenai/botimage:tag10'

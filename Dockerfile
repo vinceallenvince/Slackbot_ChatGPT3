@@ -1,6 +1,10 @@
 # Start with python 3.11 image
 FROM python:3.11-slim
 
+# Environment vars
+ARG PROJECT_ID=local
+ENV PROJECT_ID=$PROJECT_ID
+
 # Copy the current directory into /app on the image
 WORKDIR /app
 COPY . /app
