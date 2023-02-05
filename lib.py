@@ -3,6 +3,9 @@ import openai
 
 from google.cloud import secretmanager
 
+openai.api_key = access_secret_version("OPENAI_API_KEY")
+MODEL = "text-davinci-003"
+
 def access_secret_version(secret_id, version_id="latest"):
     # Create the Secret Manager client.
     client = secretmanager.SecretManagerServiceClient()
@@ -15,9 +18,6 @@ def access_secret_version(secret_id, version_id="latest"):
 
     # Return the decoded payload.
     return response.payload.data.decode('UTF-8')
-
-openai.api_key = access_secret_version("OPENAI_API_KEY")
-MODEL = "text-davinci-003"
 
 def create_completion(prompt):
 	completion = openai.Completion.create(
