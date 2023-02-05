@@ -1,5 +1,10 @@
 import os
 
+DEV = False
+if 'SERVER_SOFTWARE' in os.environ:
+	if os.environ['SERVER_SOFTWARE'].startswith('Development'):
+		DEV = True
+
 from slack_bolt import App
 from slack_bolt.adapter.socket_mode import SocketModeHandler
 
@@ -28,7 +33,7 @@ def event_test(event, say):
 	completion = oai.create_completion(event["text"])
 	completion_text = completion.choices[0].text
 
-	text = f"<@{user_id}>!? {completion_text}"
+	text = f"<@{user_id}>!!$!! {completion_text}"
 
 	logger.client.log_text(f"completion response: {text}")
 
