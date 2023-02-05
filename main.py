@@ -33,7 +33,7 @@ def event_test(event, say):
 	completion = oai.create_completion(event["text"])
 	completion_text = completion.choices[0].text
 
-	text = f"<@{user_id}>!!$!! {completion_text}"
+	text = f"<@{user_id}> {completion_text}"
 
 	logger.client.log_text(f"completion response: {text}")
 
